@@ -1,0 +1,21 @@
+{
+  "name": "chix-mime-types",
+  "description": "Mime Types for Chiχ",
+  "author": "Rob Halff <rob.halff@gmail.com>",
+  "version": "0.1.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nodule/mime-types.git"
+  },
+  "scripts": {
+    "test": "chit -r"
+  },
+  "devDependencies": {
+    "chit": "0.x.x"
+  },
+  "chix": {
+    "name": "mime-types",
+    "color": "rgb(136,96,35)"
+  }
+}
