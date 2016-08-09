@@ -1,0 +1,131 @@
+{
+  "name": "mime-types",
+  "description": "Mime Types for Chiχ",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nodule/mime-types.git"
+  },
+  "nodes": [
+    {
+      "name": "charset",
+      "ns": "mime",
+      "description": "Lookup the implied default charset of a content-type.",
+      "async": true,
+      "phrases": {
+        "active": "Lookup implied default charset of content-type for {{input.in}}"
+      },
+      "ports": {
+        "input": {
+          "in": {
+            "title": "Filename",
+            "type": "string",
+            "async": true
+          }
+        },
+        "output": {
+          "out": {
+            "title": "MimeType",
+            "type": "string"
+          }
+        }
+      },
+      "dependencies": {
+        "npm": {
+          "mime-types": "latest"
+        }
+      },
+      "fn": "on.input.in = function() {\n  output({\n    out: $.write('in', mime_types.charset($.in))\n  });\n};\n"
+    },
+    {
+      "name": "contentType",
+      "ns": "mime",
+      "description": "Create a full content-type header given a content-type or extension.",
+      "async": true,
+      "phrases": {
+        "active": "Create content-type header for {{input.in}}"
+      },
+      "ports": {
+        "input": {
+          "in": {
+            "title": "Filename",
+            "type": "string",
+            "async": true
+          }
+        },
+        "output": {
+          "out": {
+            "title": "MimeType",
+            "type": "string"
+          }
+        }
+      },
+      "dependencies": {
+        "npm": {
+          "mime-types": "latest"
+        }
+      },
+      "fn": "on.input.in = function() {\n  output({\n    out: $.write('in', mime_types.contentType($.in))\n  });\n};\n"
+    },
+    {
+      "name": "extension",
+      "ns": "mime",
+      "description": "Get the default extension for a content-type.",
+      "async": true,
+      "phrases": {
+        "active": "Get default content-type for {{input.in}}"
+      },
+      "ports": {
+        "input": {
+          "in": {
+            "title": "Filename",
+            "type": "string",
+            "async": true
+          }
+        },
+        "output": {
+          "out": {
+            "title": "MimeType",
+            "type": "string"
+          }
+        }
+      },
+      "dependencies": {
+        "npm": {
+          "mime-types": "latest"
+        }
+      },
+      "fn": "on.input.in = function() {\n  output({\n    out: $.write('in', mime_types.extension($.in))\n  });\n};\n"
+    },
+    {
+      "name": "lookup",
+      "ns": "mime",
+      "description": "Lookup mime type",
+      "async": true,
+      "phrases": {
+        "active": "Looking up mimetype for {{input.in}}"
+      },
+      "ports": {
+        "input": {
+          "in": {
+            "title": "Filename",
+            "type": "string",
+            "async": true
+          }
+        },
+        "output": {
+          "out": {
+            "title": "MimeType",
+            "type": "string"
+          }
+        }
+      },
+      "dependencies": {
+        "npm": {
+          "mime-types": "latest"
+        }
+      },
+      "fn": "on.input.in = function() {\n  output({\n    out: $.write('in', mime_types.lookup($.in))\n  });\n};\n"
+    }
+  ]
+}
